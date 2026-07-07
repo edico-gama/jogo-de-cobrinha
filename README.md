@@ -1,7 +1,7 @@
 
 🐍 Cobrinha Neon — Descrição do Projeto
 
-**Snake Neon** é uma releitura moderna, estilizada e imersiva do clássico jogo da cobrinha (*Blockade/Snake*). O projeto combina a jogabilidade nostálgica e viciante do fliperama clássico com uma estética visual **Cyberpunk/Neon**, trazendo gráficos vibrantes com efeitos de brilho difuso (*glow*), sistemas de partículas dinâmicas e áudio sintetizado em tempo real.
+***Cobrinha Neon** é uma releitura moderna, estilizada e imersiva do clássico jogo da cobrinha (*Blockade/Snake*). O projeto combina a jogabilidade nostálgica e viciante do fliperama clássico com uma estética visual **Cyberpunk/Neon**, trazendo gráficos vibrantes com efeitos de brilho difuso (*glow*), sistemas de partículas dinâmicas e áudio sintetizado em tempo real.
 
 O jogador controla uma cobra que se move em um plano infinito (com a física de atravessar paredes e reaparecer no lado oposto). O objetivo é consumir os alimentos que surgem na tela para acumular pontos. A cada alimento ingerido, a velocidade do jogo aumenta progressivamente e a cauda da cobra cresce, tornando a movimentação pelo cenário cada vez mais desafiadora.
 
