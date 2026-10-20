@@ -4,7 +4,7 @@ Jogo da cobrinha desenvolvido em **Python com Pygame**, com visual neon, efeitos
 
 Um projeto de estudo para praticar lógica de programação, criação de interfaces e desenvolvimento de jogos.
 
-## 📸 Demonstração
+
 ## 📸 Demonstração
 
 Confira duas imagens do Snake Neon:
