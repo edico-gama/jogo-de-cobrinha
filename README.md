@@ -1,36 +1,170 @@
+# 🐍 Snake Neon
 
-🐍 Cobrinha Neon — Descrição do Projeto
+Jogo da cobrinha desenvolvido em **Python com Pygame**, com visual neon, efeitos de partículas e sons sintetizados por código.
 
-***Cobrinha Neon** é uma releitura moderna, estilizada e imersiva do clássico jogo da cobrinha (*Blockade/Snake*). O projeto combina a jogabilidade nostálgica e viciante do fliperama clássico com uma estética visual **Cyberpunk/Neon**, trazendo gráficos vibrantes com efeitos de brilho difuso (*glow*), sistemas de partículas dinâmicas e áudio sintetizado em tempo real.
+Um projeto de estudo para praticar lógica de programação, criação de interfaces e desenvolvimento de jogos.
 
-O jogador controla uma cobra que se move em um plano infinito (com a física de atravessar paredes e reaparecer no lado oposto). O objetivo é consumir os alimentos que surgem na tela para acumular pontos. A cada alimento ingerido, a velocidade do jogo aumenta progressivamente e a cauda da cobra cresce, tornando a movimentação pelo cenário cada vez mais desafiadora.
+## 📸 Demonstração
+## 📸 Demonstração
 
- ✨ Diferenciais e Recursos Visuais
+Confira duas imagens do Snake Neon:
 
-* **Abertura e Game Over Temáticos:** Telas exclusivas de introdução (com textos piscantes) e encerramento com salvamento automático de recordes (*High Score*).
-* **Anatomia Detalhada da Cobra:** A cabeça possui olhos dinâmicos que olham para a direção do movimento e uma língua bífida animada. O corpo possui um formato anatômico orgânico (estilo cascavel) que afina em direção à cauda e exibe texturas de escamas brilhantes.
-* **Efeitos de Brilho (*Glow*):** Elementos essenciais como a cabeça, a comida e o título utilizam camadas de transparência para simular luzes de neon reais.
-* **Sistema de Partículas:** Explosões de poeira neon colorida geradas aleatoriamente no momento em que a comida é coletada.
+![Snake Neon — imagem 1]<img width="1600" height="1200" alt="WhatsApp Image 2026-10-20 at 17 29 31" src="https://github.com/user-attachments/assets/633c839d-edd3-440e-83d1-f210929b8143" />
+)
 
----
+![Snake Neon — imagem 2]<img width="1600" height="1200" alt="WhatsApp Image 2026-10-20 at 17 31 37" src="https://github.com/user-attachments/assets/37739061-ab7e-4119-a40b-d8e951b31ff0" />
 
- 🛠️ Tecnologias e Bibliotecas Utilizadas
 
-O desenvolvimento do jogo foi feito inteiramente em **Python**, prezando pela leveza e pela eliminação completa de dependências de arquivos de mídia externos.
+<!-- ![Tela do Snake Neon](imagens/snake-neon.png) -->
 
- 1. Linguagem Principal
+## 🎮 Funcionalidades
 
-* **Python 3:** Linguagem base devido à sua legibilidade, forte ecossistema para desenvolvimento de scripts e prototipagem rápida de jogos.
+- Tela de abertura com música.
+- Cobra com olhos, língua e corpo com escamas.
+- Comida com efeito de brilho.
+- Partículas ao coletar comida.
+- Sons de mudança de direção, alimentação e derrota.
+- Aumento de velocidade conforme a cobra cresce.
+- Pontuação e recorde salvo em arquivo.
+- Tela de fim de jogo com opção de reiniciar.
+- Modo sem paredes: a cobra atravessa as bordas da tela.
 
- 2. Bibliotecas e Módulos
+## 🛠️ Tecnologias utilizadas
 
-* **Pygame (e Pygame.mixer):** O motor gráfico e de áudio do projeto. Utilizado para renderizar as formas geométricas primitivas, gerenciar a janela do jogo, controlar a taxa de quadros por segundo (`clock.tick`), capturar os eventos do teclado e reproduzir os canais de som.
-* **Math (Nativo):** Utilizado para gerar funções trigonométricas (como as ondas senoidais: `math.sin`) fundamentais na síntese de áudio matemática de frequências em Hertz.
-* **Array (Nativo):** Utilizado para manipulação eficiente de memória estruturada em baixo nível, permitindo criar *buffers* binários de áudio de 16 bits para o mixer de som.
-* **Random (Nativo):** Responsável por toda a imprevisibilidade do jogo, desde o posicionamento aleatório da comida até a velocidade, tamanho e direção das partículas geradas nas explosões.
-* **OS (Nativo):** Utilizado para manipulação do sistema de arquivos de forma segura entre diferentes sistemas operacionais (Windows, Mac, Linux), gerando e atualizando o arquivo de persistência de recordes `recorde.txt`.
+| Tecnologia | Uso no projeto |
+|------------|----------------|
+| Python | Lógica e organização do jogo |
+| Pygame | Janela, desenhos, teclado e reprodução de áudio |
+| random | Posição da comida, partículas e ruído sonoro |
+| math | Cálculos das ondas sonoras |
+| array | Armazenamento das amostras de áudio |
+| os | Verificação do arquivo de recorde |
 
- 3. Técnicas Especiais Implementadas
+## 🧩 Como o jogo foi feito
 
-* **Sintetizador Chiptune (Áudio em Tempo Real):** O jogo dispensa arquivos `.mp3` ou `.wav`. Os efeitos de cliques de movimento, os *blips* de pontuação, as músicas da abertura e o efeito de explosão/derrota do Game Over são gerados **calculando ondas sonoras via código direto na memória RAM**.
-* **Blitting com Canal Alpha (SRCALPHA):** Criação de superfícies transparentes para a renderização de gradientes geométricos, simulando o efeito de iluminação fluorescente (Neon).
+### 1. Janela e cenário
+
+A janela tem resolução de 800 × 600 pixels.
+
+O cenário utiliza um fundo escuro com uma grade de pontos.
+Os elementos são desenhados com formas geométricas do Pygame,
+sem depender de imagens externas.
+
+### 2. Movimento da cobra
+
+A cobra se movimenta em uma grade de 20 pixels.
+
+As variáveis `dx` e `dy` definem a direção.
+O corpo é representado por uma lista de posições:
+a cada movimento, uma nova cabeça é adicionada e,
+quando necessário, o último segmento da cauda é removido.
+
+### 3. Comida e crescimento
+
+A comida aparece em posições aleatórias da grade.
+
+Quando a cabeça alcança a comida:
+
+- A cobra cresce um segmento.
+- A pontuação aumenta.
+- A velocidade aumenta.
+- Um som é reproduzido.
+- Uma explosão de partículas aparece.
+
+### 4. Colisões
+
+O jogo verifica se a cabeça encostou no próprio corpo.
+Quando isso acontece, a tela de fim de jogo é exibida.
+
+As bordas não causam derrota: ao sair por um lado,
+a cobra reaparece no lado oposto.
+
+### 5. Visual neon
+
+O brilho é criado com superfícies transparentes
+desenhadas atrás dos elementos.
+
+A cabeça possui olhos e língua que acompanham a direção.
+O corpo usa segmentos com tamanhos e cores diferentes
+para criar o efeito de escamas e afinamento da cauda.
+
+### 6. Sons gerados por código
+
+Os efeitos sonoros são sintetizados com `math` e `array`
+e reproduzidos pelo mixer do Pygame.
+
+As frequências e durações variam para criar sons de:
+
+- Mudança de direção.
+- Coleta de comida.
+- Derrota.
+- Melodia de abertura.
+
+Não é necessário baixar arquivos de música ou efeitos.
+
+### 7. Recorde
+
+O recorde é armazenado no arquivo `recorde.txt`.
+
+Quando uma partida termina com uma pontuação maior,
+o arquivo é atualizado. Assim, o recorde pode ser
+carregado na próxima execução.
+
+## 🚀 Como executar
+
+É necessário ter o Python instalado.
+
+Instale o Pygame:
+
+```bash
+python -m pip install pygame
+```
+
+Na pasta do projeto, execute:
+
+```bash
+python main.py
+```
+```
+cobrinha.py
+```
+
+## ⌨️ Controles
+
+| Tecla | Ação |
+|-------|------|
+| ↑ | Mover para cima |
+| ↓ | Mover para baixo |
+| ← | Mover para a esquerda |
+| → | Mover para a direita |
+| Espaço | Iniciar ou reiniciar nas telas de menu |
+| Esc | Sair nas telas de abertura e fim de jogo |
+
+## 📚 Aprendizados
+
+Este projeto permite praticar:
+
+- Funções, listas e variáveis.
+- Laços de repetição e condições.
+- Eventos de teclado.
+- Coordenadas e colisões.
+- Desenho de elementos na tela.
+- Síntese e reprodução de áudio.
+- Leitura e gravação de arquivos.
+
+## 🔮 Ideias para próximas versões
+
+- [ ] Pausar a partida.
+- [ ] Ativar e desativar o som.
+- [ ] Escolher a dificuldade.
+- [ ] Criar um modo com paredes.
+- [ ] Impedir que a comida apareça dentro da cobra.
+
+## 👨‍💻 Autor
+
+**Édico Gama**
+
+Estudante de Engenharia de Software,
+aprendendo e construindo projetos com Python.
+
+[Meu GitHub](https://github.com/edico-gama)
