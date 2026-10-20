@@ -9,10 +9,11 @@ Um projeto de estudo para praticar lógica de programação, criação de interf
 
 Confira duas imagens do Snake Neon:
 
-![Snake Neon — imagem 1]<img width="1600" height="1200" alt="WhatsApp Image 2026-10-20 at 17 29 31" src="https://github.com/user-attachments/assets/633c839d-edd3-440e-83d1-f210929b8143" />
-)
+![Snake Neon — imagem 1]<img width="1448" height="1086" alt="Tela Snake Neon restaurada" src="https://github.com/user-attachments/assets/1483363e-165f-4406-8e35-a31ef68442e6" />
 
-![Snake Neon — imagem 2]<img width="1600" height="1200" alt="WhatsApp Image 2026-10-20 at 17 31 37" src="https://github.com/user-attachments/assets/37739061-ab7e-4119-a40b-d8e951b31ff0" />
+
+![Snake Neon — imagem 2]<img width="1448" height="1086" alt="Tela restaurada do jogo Snake Neon" src="https://github.com/user-attachments/assets/a311cd73-d8a2-47f2-baa6-4328aa1fa01c" />
+
 
 
 <!-- ![Tela do Snake Neon](imagens/snake-neon.png) -->
